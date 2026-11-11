@@ -368,7 +368,7 @@ body{
   }
 
   // שנה בכותרת תחתונה
-  document.getElementById('yr').textContent='2027';
+  document.getElementById('yr').textContent=new Date().getFullYear();
 
   // פרלקס עדין על תנועת מצביע (דסקטופ)
   if(matchMedia('(hover:hover) and (pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
