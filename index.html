@@ -120,6 +120,35 @@ body{
   background:rgba(255,255,255,.06); border:1px solid var(--card-line); display:inline-flex; align-items:center; gap:6px;}
 .pill svg{width:13px;height:13px;}
 
+/* ===== המשפט המוביל ===== */
+.mission{position:relative; margin-top:20px; padding:0 6px 14px; max-width:360px;
+  font-family:'Varela Round',sans-serif; font-size:17px; line-height:1.55; color:#fff; text-wrap:balance;}
+.mission b{font-weight:400; color:#ffd29a;}
+.mission::after{content:""; position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:72px; height:3px; border-radius:3px; background:linear-gradient(90deg,var(--orange),var(--pink));}
+
+/* ===== תקציר אייקוני ===== */
+.about{margin-top:22px;}
+.about-lead{text-align:center; font-size:12.5px; color:var(--muted); letter-spacing:.3px; margin-bottom:10px;}
+.worlds{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
+.world{display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center;
+  padding:13px 6px 12px; border-radius:16px; background:var(--card); border:1px solid var(--card-line);}
+.wic{width:40px; height:40px; border-radius:13px; display:grid; place-items:center; color:#fff;
+  background:linear-gradient(150deg, var(--w), color-mix(in srgb, var(--w) 55%, #1a1448));
+  box-shadow:0 6px 14px color-mix(in srgb, var(--w) 40%, transparent);}
+.wic svg{width:22px; height:22px;}
+.wt{font-size:12.5px; font-weight:600; line-height:1.3; color:#e9ecff;}
+.stats{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px;}
+.stat{display:flex; align-items:center; gap:10px; padding:11px 11px; border-radius:16px;
+  background:var(--card); border:1px solid var(--card-line); min-width:0;}
+.sic{flex:0 0 auto; width:34px; height:34px; border-radius:11px; display:grid; place-items:center;
+  color:var(--w); background:color-mix(in srgb, var(--w) 16%, transparent);}
+.sic svg{width:19px; height:19px;}
+.sv{min-width:0; display:flex; flex-direction:column; align-items:flex-start;}
+.sv b{font-size:15.5px; font-weight:800; line-height:1.15; color:#fff;}
+.sv small{font-size:11px; color:var(--muted); line-height:1.3; margin-top:2px;}
+@media (max-width:360px){ .wt{font-size:11.5px;} .sv b{font-size:14px;} .stat{padding:10px 8px; gap:8px;} }
+
 /* ===== כותרות מקטע ===== */
 .section{margin-top:34px;}
 .sec-head{display:flex; align-items:center; gap:11px; margin:0 4px 14px;}
@@ -259,7 +288,48 @@ body{
       <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2.4"/><path d="M12 5v-.01M12 19v.01M5 12H4.99M19 12h.01"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)"/></svg>STEM</span>
       <span class="pill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6l-8-4Z" opacity=".25"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>AI בחינוך</span>
     </div>
+
+    <!-- ===== המשפט המוביל ===== -->
+    <p class="mission">אני כאן כדי ללמד אותך ליצור הוראה <b>משמעותית ויצירתית</b> באמצעים טכנולוגיים.</p>
   </header>
+
+  <!-- ===== תקציר אייקוני: שלושה עולמות + מספרים ===== -->
+  <section class="about" aria-label="בקצרה עליי">
+    <p class="about-lead">מחברת בין שלושה עולמות</p>
+    <div class="worlds">
+      <div class="world" style="--w:#a06bff">
+        <span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a3.2 3.2 0 0 0-3.2 3.2v.3A2.8 2.8 0 0 0 6.5 10.3 2.8 2.8 0 0 0 7.6 12.5 2.8 2.8 0 0 0 9.6 18H12"/><path d="M12 4a3.2 3.2 0 0 1 3.2 3.2v.3a2.8 2.8 0 0 1 2.3 2.8 2.8 2.8 0 0 1-1.1 2.2A2.8 2.8 0 0 1 14.4 18H12"/><path d="M12 4v16"/></svg></span>
+        <span class="wt">איך המוח לומד</span>
+      </div>
+      <div class="world" style="--w:#2fd4e0">
+        <span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20h10M12 16v4M7 9h6M7 12h4"/></svg></span>
+        <span class="wt">מה באמת קורה בכיתה</span>
+      </div>
+      <div class="world" style="--w:#ff9d40">
+        <span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5Z"/></svg></span>
+        <span class="wt">הכלי שעושה את ההבדל</span>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat" style="--w:#3fcf8e">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2 9l10 5 10-5-10-5Z"/><path d="M6 11v4.5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V11"/></svg></span>
+        <span class="sv"><b dir="ltr">3,000+</b><small>אנשי חינוך הוכשרו</small></span>
+      </div>
+      <div class="stat" style="--w:#25d366">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M16 13.6c2.9.2 5 2.2 5 5.1"/></svg></span>
+        <span class="sv"><b dir="ltr">5,000+</b><small>חברות וחברים בקהילה</small></span>
+      </div>
+      <div class="stat" style="--w:#a06bff">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.2"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)"/></svg></span>
+        <span class="sv"><b>מדעי המוח</b><small>סגול, אונ' תל אביב</small></span>
+      </div>
+      <div class="stat" style="--w:#4d8bf5">
+        <span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span>
+        <span class="sv"><b>משרד החינוך</b><small>מדריכת STEM ו‑AI</small></span>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== רשתות חברתיות — בראש הדף ===== -->
   <section class="section" style="margin-top:24px;">
